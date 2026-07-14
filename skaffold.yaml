@@ -1,0 +1,13 @@
+apiVersion: skaffold/v4beta6
+kind: Config
+
+metadata:
+  name: ci-cd-practice
+
+build:
+  artifacts:
+    - image: app
+
+manifests:
+  rawYaml:
+    - k8s/deployment.yaml

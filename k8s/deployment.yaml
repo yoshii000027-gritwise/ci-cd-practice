@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+
+metadata:
+  name: ci-cd-practice
+
+spec:
+  replicas: 1
+
+  selector:
+    matchLabels:
+      app: ci-cd-practice
+
+  template:
+    metadata:
+      labels:
+        app: ci-cd-practice
+
+    spec:
+      containers:
+      - name: app
+        image: app
