@@ -26,4 +26,4 @@ jobs:
         run: |
           skaffold version
           skaffold diagnose -p dev
-          skaffold build -p dev
+          skaffold build -p dev --push=false
