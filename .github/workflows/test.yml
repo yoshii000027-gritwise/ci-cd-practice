@@ -13,4 +13,4 @@ jobs:
       - uses: actions/checkout@v4
 
       - name: Hello
-        run: echo "Hello CI/CD"
+        run: echo "Hello CI/CD" 
