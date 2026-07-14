@@ -6,6 +6,32 @@ on:
       - main
 
 jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Docker Build
+        run: docker build -t test-app .
+
+      - name: Install Skaffold
+        run: |
+          curl -Lo skaffold https://storage.googleapis.com/skaffold/releases/latest/skaffold-linux-amd64
+          chmod +x skaffold
+          sudo mv skaffold /usr/local/bin
+
+      - name: Check Skaffold
+        run: skaffold versionname: Test CI
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
   hello:
     runs-on: ubuntu-latest
 
