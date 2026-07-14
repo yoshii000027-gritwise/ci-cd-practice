@@ -23,4 +23,7 @@ jobs:
           sudo mv skaffold /usr/local/bin
 
       - name: Check Skaffold
-        run: skaffold version
+        run: |
+          skaffold version
+          skaffold diagnose -p dev
+          skaffold build -p dev
